@@ -1,5 +1,5 @@
-SwyftPHP
-========
+SwyftPHP (http://www.swyftphp.com)
+========================================
 
 Swyft is an Open Source PHP micro-Framework that packs a punch. With a small footprint, easy configuration and simple syntax, Swyft can be used for applications of any scale. It is easy to customize and easy to extend with libraries from other frameworks, like Zend or CodeIgniter. Swyft was designed with two things in mind:
 
