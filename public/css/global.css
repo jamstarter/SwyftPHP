@@ -1,0 +1,95 @@
+body{
+	margin:0;
+	background: url('images/bg.jpg') 50% -30px repeat-y;
+	font-family: Helvetica, Arial, sans-serif;
+
+}
+
+a,a:visited{
+	color:#3b698b;
+	text-decoration:none;
+}
+
+#header{
+	margin:auto;
+	margin-top:20px;
+	height:110px;
+	width:960px;
+
+border-radius: 10px 10px 0px 0px;
+}
+
+#navbar{
+	float:right;
+	padding-right:20px;
+}
+
+#navbar a{
+	color:#3b698b;
+	text-decoration:none;
+	font-size:15px;
+	padding:3px;
+	border-bottom:3px solid #fff;
+	margin:2px; 
+}
+
+#navbar a:hover{
+	border-bottom:3px solid #3a5b74;
+}
+
+#logo{
+	margin-top:-20px;
+	margin-left:25px;
+}
+
+#footer{
+	margin-bottom:50px;
+}
+
+#content{
+	margin:auto;
+	min-height:950px;
+	background: rgba(255,255,255,1);
+	width:920px;
+	padding:20px;
+	padding-top:40px;
+	border-radius:25px;
+	font-size:.9em;
+}
+
+h1{
+	color:#3b698b;
+	font-family: 'Titan One', cursive;
+	font-weight:normal;
+	border-bottom:2px dashed #e2e2e2;
+	margin-bottom:0px;
+}
+
+p{
+	padding:10px;
+}
+
+xmp{
+	border:1px solid #e2e2e2;
+	padding:10px;
+	margin:5px;
+	border-radius:10px;
+}
+
+.download_button,.download_button:visited{
+	font-size:30px;
+	background: rgb(59,103,158); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(59,103,158,1) 0%, rgba(43,136,217,1) 50%, rgba(32,124,202,1) 51%, rgba(125,185,232,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(59,103,158,1)), color-stop(50%,rgba(43,136,217,1)), color-stop(51%,rgba(32,124,202,1)), color-stop(100%,rgba(125,185,232,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(59,103,158,1) 0%,rgba(43,136,217,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(59,103,158,1) 0%,rgba(43,136,217,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(59,103,158,1) 0%,rgba(43,136,217,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* IE10+ */
+background: linear-gradient(top, rgba(59,103,158,1) 0%,rgba(43,136,217,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+color:#fff;
+padding:15px 45px;
+border-radius:20px;
+border:3px solid #fff;
+box-shadow:2px 2px 20px #3b698b;
+color:#fff;
+}

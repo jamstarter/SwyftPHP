@@ -1,0 +1,50 @@
+<a href='/docs'>Back to Documentation</a>
+<h1>Creating Pages</h1>
+<p>Creating pages with Swyft is easy. There are a few steps and conventions you need to be aware of when getting started. Follow the instructions below to create new pages in your application.</p>
+
+<h2>Create Your Controller Method</h2>
+<p>The first step of creating a page is creating the controller method associated with the page. For this example, we'll use the IndexController and add a method called "helloworld".</p>
+/application/controllers/IndexController.php
+<xmp>class IndexController extends SwyftController{
+
+	//This is the controller method for the page
+	public function helloworld(){	
+		//Controller logic goes here
+		
+		//Set a variable to send to the view
+		$this->view->hello = "Hello World";
+	}
+}
+</xmp>
+
+
+<h2>Create Your View</h2>
+<p>The next step is to create the HTML view for our page.</p>
+/application/views/index/helloworld.phtml
+<xmp>Welcome, User!<br><br>
+<p><?="<?=\$hello;?>";?></p>
+</xmp>
+
+<h2>Add a Route</h2>
+<p>Next, you need to add a route to the <b>/configs/routes.ini</b> file. You'll need to name your route, and set the controller and action (method) name to use when the url is called.</p>
+/configs/routes.ini
+<xmp>routes.helloworld.route = "/hello-world"
+routes.helloworld.controller ="index"
+routes.helloworld.action ="helloworld"
+</xmp>
+<h2>Variables in Your Routes</h2>
+<p>You can add variables to your routes by using the following syntax, where we add the variable "myvariable" to our route from above.</p>
+/configs/routes.ini
+<xmp>routes.helloworld.route = "/hello-world/:myvariable"
+routes.helloworld.controller ="index"
+routes.helloworld.action ="helloworld"
+routes.helloworld.myvariable ="Hello, World!"
+</xmp>
+What we've done above is state where in the URL the variable should be located as well as set a default value for the variable. A default value is required even if it is only empty quotes.
+You can access this variable directly from your view with <b>$myvariable</b> or you can access this variable from a controller with <b>$this->request->getParam('myvariable')</b>.
+<p>That's It! Now our site has a page at http://www.[URL].com/hello-world</p>
+<p>You can use libraries and models from the controller and pass variables into the view to load dynamic content. All views are loaded into the default layout file's content section.</p>
+<h2>Disabling the Layout</h2>
+<p>There are times, like when you want to perform an AJAX call to a specific controller action, that you will want to disable the layout on the page so you can get back a response
+without all the HTML from the layout. To do this, just add the following line to the beginning of your controller action:</p>
+<xmp>$this->disableLayout();</xmp>

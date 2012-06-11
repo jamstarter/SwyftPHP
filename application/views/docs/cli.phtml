@@ -1,0 +1,59 @@
+<a href='/docs'>Back to Documentation</a>
+<h1>Command Line Interface</h1>
+<p>The command line interface provides a means to use tools from the command line that are written in PHP and hook into the MVC architecture of your web application.
+This can be especially useful when running routine tasks during development, generating code or test data, and scheduling cron jobs to name a few.
+
+<h2>The Basics</h2>
+To see what options are available in your installation, type the following into the command line from the root of your application:</p>
+
+<xmp>>> cd scripts
+>> php cli.php</xmp>
+
+or
+
+<xmp>>> php scripts/cli.php</xmp>
+
+<p>This returns the menu for the CLI application:</p>
+<xmp>
+   
+ ____                           ___  __        ____    __  __  ____    
+/\  _`\                       /'___\/\ \__    /\  _`\ /\ \/\ \/\  _`\  
+\ \,\L\_\  __  __  __  __  __/\ \__/\ \ ,_\   \ \ \L\ \ \ \_\ \ \ \L\ \
+ \/_\__ \ /\ \/\ \/\ \/\ \/\ \ \ ,__\ \ \/     \ \ ,__/\ \  _  \ \ ,__/
+   /\ \L\ \ \ \_/ \_/ \ \ \_\ \ \ \_/ \ \ \_    \ \ \/  \ \ \ \ \ \ \/ 
+   \ `\____\ \___x___/'\/`____ \ \_\   \ \__\    \ \_\   \ \_\ \_\ \_\ 
+    \/_____/\/__//__/   `/___/> \/_/    \/__/     \/_/    \/_/\/_/\/_/ 
+                           /\___/                                      
+                           \/__/                                          
+   
+   
+ CLI Command Line Interface for Swyft PHP 
+ Author: Brandon Swift 2012
+ 
+ Available Methods: 
+ testCLI - Test the CLI configuration
+</xmp>
+<p>You can run the testCLI function by typing the following:</p>
+<xmp>>> php cli.php testCLI
+
+
+ CLI APPLICATION IS WORKING!!! 
+
+</xmp>
+
+<h2>Extending the CLI</h2>
+<p>You can write your own methods to extend the functionality of the CLI Application. Simply drop your file in the <b>scripts/cliactions</b> folder and it will be recognized by Swyft. The following format is necessary for compatibility.</p>
+<xmp>//This line must be included for your function to appear in the CLI menu
+//If you want to incude multiple methods in one file, just add more 
+//elements to this array and include your functions below
+
+$commands[] = array('command'=>'testCLI','description'=>'Test the CLI configuration');
+
+//This is your method.
+
+function testCLI(){
+	echo "\n\n CLI APPLICATION IS WORKING!!! \n\n";
+	
+	//Any logic you want here. All classes from the web application are available here
+	
+}</xmp>

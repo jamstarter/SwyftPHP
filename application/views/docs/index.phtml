@@ -1,0 +1,39 @@
+<h1>Documentation</h1>
+<p>
+	Browse through the sections of documentation to learn how to leverage the most from Swyft. More libraries are being added every day to help making web applications even easier!
+<ul>
+	<li><a href='/docs/creating-pages'>Creating Pages</a></li>
+	<li><a href='/docs/requests'>Handling Requests</a></li>
+	<li><a href='/docs/database'>Interacting with your Database</a></li>
+	<li><a href='/docs/cli'>Command Line Interface</a></li>
+	<li><a href='/docs/migrations'>Database Migrations</a></li>
+</ul>
+
+</p>
+
+<h1>Getting Started</h1>
+<p>
+It's easy to get started with Swyft! Just download the zip package and copy the files to your web server. There are only a couple of things you need to do to get Swyft running.
+<br><br><b>Your system should meet the following minimum requirements:</b>
+<ul>
+	<li>Apache Server with mod_rewrite enabled</li>
+	<li>PHP5</li>
+	<li>MySQL</li>
+</ul>
+
+<h2>Configure Your Application</h2>
+Application settings can be customized by editing the application.ini file (<b>configs/application.ini</b>).All settings here are available in Swyft under the object <b>$sConfig</b>
+and can be used to help you easily change settings. <br>
+<br>
+For example:
+<xmp>show_errors = 1</xmp>
+can be used as:
+<xmp>$sConfig->show_errors</xmp>
+<h2>Connect Your Database</h2>
+Connect your database by filling out the following fields in application.ini:<br>
+<xmp>dbhost = "xxxx"     		;the hostname or ip of your database (e. localhost or 92.45.123.45) 
+dbusername = "xxxx"      	;the username for access to your database 
+dbpassword = "xxxx"  		;the password for access to your database 
+dbname = "xxxx"         	;the name of the database to use for this application
+</xmp>
+</p>
