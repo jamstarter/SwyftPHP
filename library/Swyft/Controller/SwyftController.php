@@ -8,12 +8,13 @@ class SwyftController{
 	public $view;
 	public $request;
 	protected $_disableLayout;
+	protected $_layout;
 
 	function __construct(){
 		$this->db = new Swyft_DB;
 		$this->request = new SRequest;
 
-		
+		$this->_layout = "default";
 	}
 	
 	/**
@@ -46,7 +47,7 @@ class SwyftController{
 		 }
 		if(@$this->_disableLayout <> 1){
 			
-			require_once(APPLICATION_PATH."/application/layouts/default.phtml");
+			require_once(APPLICATION_PATH."/application/layouts/".$this->_layout.".phtml");
 			$completeView = ob_get_contents();
 		 	ob_clean();
 		 	echo $completeView;
@@ -59,20 +60,32 @@ class SwyftController{
 	
 
 	}
-	
+	/**
+	* Disable the layout and only show the inner view
+	*/
 	public function disableLayout(){
 		$this->_disableLayout = 1;
 		return $this;
 	}
 	
+	/**
+	* Diabled the view from showing
+	*/
 	public function disableView(){
 		$this->_disableView = 1;
 		return $this;
 	}
 	
+	//Get global config object
 	public function getConfig(){
 		global $sConfig;
 		return $sConfig;
+	}
+	/**
+	* Set Layout to be used defaults to default representing layouts/default.phtml
+	*/
+	public function setLayout($layout){
+		$this->_layout = $layout;
 	}
 
 }
