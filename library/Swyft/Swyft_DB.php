@@ -76,7 +76,7 @@ class Swyft_DB{
 			$clause ="AND ";
 		}
 		$this->_where =$clause." ".$where." ";
-		$this->_query .= $this->_where;
+		$this->_query .= $this->_where." ";
 		return $this;
 	}
 	
@@ -141,12 +141,19 @@ class Swyft_DB{
 		return $this;
 	}
 	
+	
+	/**
+	* Remove database table
+	* @param $table database table name
+	*/
 	public function dropTable($table){
 		$query = "DROP table `$table`";
 		mysql_query($query);
 		return $this;
 	}
-	
+	/**
+	* run a query that you've previously built
+	*/
 	public function runQuery(){
 		mysql_query($this->_query);
 	}
@@ -160,6 +167,22 @@ class Swyft_DB{
 	}
 	
 	/**
+	* Set query order
+	* @param $by order by clause
+	*/
+	public function order($by){
+		$this->_query .= "ORDER BY ".$by." ";
+	}
+	
+	/**
+	* Set query limit
+	* @param $limit
+	*/
+	public function limit($limit){
+		$this->_query .= "LIMIT ".$limit." ";
+	}
+	
+	/**
 	* Update data to DB
 	* @param $data array
 	*/
@@ -169,7 +192,7 @@ class Swyft_DB{
 		foreach($data AS $key => $value){
 			$sets[]=" `$key` = \"".mysql_real_escape_string($value)."\" ";
 		}
-		$this->_query .= "SET ". implode(",",$sets) ." WHERE ".$where;
+		$this->_query .= "SET ". implode(",",$sets) ." WHERE ".$where." ";
 
 		return mysql_query($this->_query);
 	}
