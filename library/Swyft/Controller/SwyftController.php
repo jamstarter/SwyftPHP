@@ -34,7 +34,7 @@ class SwyftController{
 
 		if(!empty($data)){
 			foreach($data AS $d => $value){
-				$$d = $value;
+				$this->$d = $value;
 				
 			}
 		}
@@ -47,6 +47,9 @@ class SwyftController{
 		if(@$this->_disableLayout <> 1){
 			
 			require_once(APPLICATION_PATH."/application/layouts/default.phtml");
+			$completeView = ob_get_contents();
+		 	ob_clean();
+		 	echo $completeView;
 			
 		} else {
 			if($this->_disableView <> 1){
