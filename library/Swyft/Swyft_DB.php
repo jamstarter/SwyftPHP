@@ -207,7 +207,7 @@ class Swyft_DB{
 		if($return){
 			return mysql_fetch_assoc($result);
 		} else {
-			return true;
+			return $result;
 		}
 	}
 }
