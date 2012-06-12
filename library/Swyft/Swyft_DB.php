@@ -196,4 +196,18 @@ class Swyft_DB{
 
 		return mysql_query($this->_query);
 	}
+	
+	/**
+	* Run raw SQL
+	* @param $sql (string) your query
+	* @param $return if true, associative array is returned
+	*/
+	public function runSQL($sql,$return=false){
+		$result = mysql_query($sql);
+		if($return){
+			return mysql_fetch_assoc($result);
+		} else {
+			return true;
+		}
+	}
 }
