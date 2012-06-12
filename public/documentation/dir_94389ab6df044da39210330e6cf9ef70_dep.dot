@@ -1,9 +1,0 @@
-digraph G {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_e4f25c776a14e841cd650b4520cb7443 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="scripts" fontname="Helvetica", fontsize="10", URL="dir_e4f25c776a14e841cd650b4520cb7443.html"]
-  dir_94389ab6df044da39210330e6cf9ef70 [shape=box, label="cliactions", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_94389ab6df044da39210330e6cf9ef70.html"];
-  }
-}
