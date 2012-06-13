@@ -1,7 +1,7 @@
 <?php
 
 //Add to CLI menu
-$commands[] = array('command'=>'migrate','description'=>'Migrate Database');
+$commands[] = array('command'=>'migrate [version]','description'=>'Migrate Database');
 
 /**
 * This function aids in migrating your database to different versions

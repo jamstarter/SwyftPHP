@@ -48,3 +48,7 @@ You can access this variable directly from your view with <b>$myvariable</b> or 
 <p>There are times, like when you want to perform an AJAX call to a specific controller action, that you will want to disable the layout on the page so you can get back a response
 without all the HTML from the layout. To do this, just add the following line to the beginning of your controller action:</p>
 <xmp>$this->disableLayout();</xmp>
+<h1>Generating Models, Views and Controllers</h1>
+<p>You can generate a model, view and controller adhering to Swyft's naming convention from the CLI menu. Just pass the name into the <b>generate</b> method.</p>
+<xmp>>> php scripts/cli.php generate Hello</xmp>
+<p>This generates <b>application/controllers/HelloController.php</b>, <b>application/models/Hello.php</b>, and <b>application/views/hello/hello.phtml</b></p>
