@@ -5,6 +5,7 @@ class DocsController extends SwyftController{
 	public function index(){
 	
 		$this->view->pageTitle = "Documentation";
+		$users = new Swyft_User;
 
 	}
 	
@@ -26,6 +27,10 @@ class DocsController extends SwyftController{
 	
 	public function migrations(){
 		$this->view->pageTitle = "Database Migrations";
+	}
+	
+	public function users(){
+		$this->view->pageTitle = "User Authentication";
 	}
 	
 	
