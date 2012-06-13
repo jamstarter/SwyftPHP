@@ -33,6 +33,12 @@ class DocsController extends SwyftController{
 		$this->view->pageTitle = "User Authentication";
 	}
 	
+	public function toolbelt(){
+		$this->view->pageTitle = "The Toolbelt";
+		
+		$toolbelt = new Swyft_Toolbelt;
+	
+	}
 	
 
 
