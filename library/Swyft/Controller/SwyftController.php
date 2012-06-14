@@ -8,12 +8,12 @@ class SwyftController{
 	public $view;
 	public $request;
 	protected $_disableLayout;
-	protected $_layout;
+	protected $_layout='default';
 
 	function __construct(){
 		$this->db = new Swyft_DB;
 		$this->request = new SRequest;
-
+		$this->_users = new Swyft_User;
 		$this->_layout = "default";
 	}
 	
@@ -86,6 +86,13 @@ class SwyftController{
 	*/
 	public function setLayout($layout){
 		$this->_layout = $layout;
+	}
+	
+	/**
+	* redirect from controller
+	*/
+	public function redirect($url){
+		header("Location: $url");
 	}
 
 }

@@ -105,5 +105,12 @@ class SRequest{
 			$this->params[$key] = mysql_real_escape_string($value);
 		}
 	}
+	
+	/**
+	* Check if post
+	*/
+	public function isPost(){
+		return (!empty($_POST));
+	}
 
 }

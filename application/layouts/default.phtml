@@ -11,6 +11,11 @@
 			<div id='navbar'>
 				<a href='/'>Home</a>
 				<a href='/docs'>Documentation</a>
+				<? if(Swyft_User::isActive()){ ?>
+				<a href='/logout'>Logout</a>
+				<? } else { ?>
+				<a href='/login'>Login</a>
+				<? } ?>
 			</div>
 			<a href='/'><img src='/css/images/logo.png' id='logo' border='0'></a>
 			</div>

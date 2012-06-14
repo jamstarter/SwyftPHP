@@ -75,7 +75,7 @@ class Swyft_DB{
 		} else {
 			$clause ="AND ";
 		}
-		$this->_where =$clause." ".$where." ";
+		$this->_where .=$clause." ".$where." ";
 		$this->_query .= $this->_where." ";
 		return $this;
 	}

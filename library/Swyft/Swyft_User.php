@@ -55,7 +55,7 @@ class Swyft_User extends Swyft_DB{
 	public function getUser($id){
 		$result = $this->select()
 				->from($this->_name)
-				->where("id=$id")
+				->where("id='$id'")
 				->fetchObject();
 		return $result;		
 	}
@@ -72,11 +72,9 @@ class Swyft_User extends Swyft_DB{
 		$this->where("email='$email'");
 		$user = $this->fetchObject();
 		if($user){
-			foreach(@$user AS $u){
-				if($u->password == sha1($password.$user->salt)){
-					$thisUser = $u->id;
-				}
-			}
+				if($user->password == sha1($password.$user->salt)){
+					$thisUser = $user->id;
+				}		
 			if($thisUser){
 				$result = $this->getUser($thisUser);
 			} else {
@@ -110,7 +108,7 @@ class Swyft_User extends Swyft_DB{
 			$data[$key] = $value;
 			if($key == 'password'){
 				$data['salt'] = uniqid();
-				$data['password'] = sha1($value.$salt);
+				$data['password'] = sha1($value.$data['salt']);
 			}
 			
 		}
@@ -140,7 +138,7 @@ class Swyft_User extends Swyft_DB{
 	}
 	
 	public function isActive(){
-		if(isset($_SESSION['user']) && $_SESSION['user'] <> null){
+		if(isset($_SESSION['user'])){
 			return true;
 		} else {
 			return false;
