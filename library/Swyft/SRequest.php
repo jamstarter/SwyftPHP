@@ -40,16 +40,29 @@ class SRequest{
 		return $this->params;
 	}
 	
-	public function getPost($key){
-		return $this->posts[$key];
+	public function getPost($key,$default=null){
+		if($this->posts[$key]){
+			return $this->posts[$key];
+		} else {
+			return $default;
+		}
 	}
 	
-	public function getRequest($key){
-		return $this->gets[$key];
+	public function getRequest($key,$default=null){
+		if($this->gets[$key]){
+			return $this->gets[$key];
+		} else {
+			return $default;
+		}
 	}
 	
-	public function getParam($key){
-		return $this->params[$key];
+	public function getParam($key,$default=null){
+		if($this->params[$key]){
+			return $this->params[$key];
+		} else {
+			return $default;
+		}
+		
 	}
 	
 	public function setParam($key,$value){
