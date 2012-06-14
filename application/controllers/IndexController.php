@@ -21,7 +21,7 @@ class IndexController extends SwyftController{
 			if($userid){
 				$this->redirect("/");
 			} else {
-				echo "Invalid Login. Please try again.";
+				$this->view->error =  "Invalid Login. Please try again.";
 			}
 		}
 

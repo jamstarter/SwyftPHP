@@ -72,10 +72,10 @@ class Swyft_User extends Swyft_DB{
 		$this->where("email='$email'");
 		$user = $this->fetchObject();
 		if($user){
-				if($user->password == sha1($password.$user->salt)){
+				if(@$user->password == sha1(@$password.@$user->salt)){
 					$thisUser = $user->id;
 				}		
-			if($thisUser){
+			if(@$thisUser){
 				$result = $this->getUser($thisUser);
 			} else {
 				$result = false;
