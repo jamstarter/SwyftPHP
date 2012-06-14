@@ -82,9 +82,7 @@ $this->update($data,$where);
 
 <h1>Delete Queries</h1>
 <p>Use the following structure to delete records from the database.</p>
-<xmp>$this->delete()->from('users')->where("email='john@doe.com'");
-$this->runQuery();
-</xmp>
+<xmp>$this->delete("email='john@doe.com'");</xmp>
 
 <h1>Order By</h1>
 <p>Use the following to order your query results.</p>

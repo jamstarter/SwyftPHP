@@ -160,10 +160,11 @@ class Swyft_DB{
 	
 	/**
 	* Add delete section to query property
+	* @where where clause ex. "id='3'"
 	*/
-	public function delete(){
-		$this->_query = "DELETE ";
-		return $this;
+	public function delete($where){
+		$sql = "DELETE FROM ".$this->_name." WHERE $where";
+		return mysql_query($sql);
 	}
 	
 	/**
