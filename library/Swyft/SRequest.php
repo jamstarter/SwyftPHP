@@ -87,10 +87,19 @@ class SRequest{
 		
 	}
 	
+	/**
+	* Set a single parameter
+	* @param $key key of param
+	* @param $value value of param
+	*/
 	public function setParam($key,$value){
 		$this->params[$key] = $value;
 	}
 	
+	/**
+	* Set multiple params at once
+	* @param $array (array) key=>value data
+	*/
 	public function setParams($array){
 		foreach($array AS $key => $value){
 			$this->params[$key] = mysql_real_escape_string($value);
