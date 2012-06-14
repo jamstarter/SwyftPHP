@@ -12,6 +12,10 @@ Retrieve $_GET,$_REQUEST, and $_POST
 <Br>Retrieve $_GET & $_REQUEST
 <xmp>$this->request->getRequests();</xmp>
 <xmp>$this->request->getRequest('foo');</xmp>
+
+<Br>You can also set a default when fetching one parameter
+<xmp>$this->request->getParam('foo','mydefault');</xmp>
+
 <h2>Setting Parameters</h2>
 <p>You can set parameters with <b>setParam</b>:</p>
 <xmp>$foo = $this->request->setParam('foo','bar');
