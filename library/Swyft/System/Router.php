@@ -43,25 +43,27 @@ class Swyft_Router{
 		} else if(key_exists(@$requestURI[0],$urlRoutes)){
 			$myRouteName = @$requestURI[0];
 		}
-		$myroute = $urlRoutes[$myRouteName];
+		$myroute = @$urlRoutes[@$myRouteName];
 		
 		//Call controller and action
 		$controller = ucwords($myroute['controller'])."Controller";
 		$action = $myroute['action'];
+
 		
 		//Initialize Controller
 		$Template = new $controller;
 		
+
 		
 		//Set View script
 		$Template->setView(APPLICATION_PATH."/application/views/".strtolower($myroute['controller'])."/".strtolower($action).".phtml");
 		
 		//Get leftover variables from route
-		$leftover = str_replace($myRouteName,"",$myroute['route']);
+		$leftover = str_replace(@$myRouteName,"",@$myroute['route']);
 		$variables = explode("/",str_replace(":","",$leftover));
 		
 		//Get leftover values from URL
-		$leftover2 = str_replace($myRouteName,"",$url);
+		$leftover2 = str_replace(@$myRouteName,"",$url);
 		$variables2 = explode("/",str_replace(":","",$leftover2));
 		$replaceDefaults = array();
 		

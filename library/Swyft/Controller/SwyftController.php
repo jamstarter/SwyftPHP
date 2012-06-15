@@ -39,7 +39,7 @@ class SwyftController{
 				
 			}
 		}
-		
+
 		if(@$this->_disableView <> 1){
 		 	require_once($path);
 		 	$swyftPageContent = ob_get_contents();

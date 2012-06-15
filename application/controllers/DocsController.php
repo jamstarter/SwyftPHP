@@ -40,6 +40,10 @@ class DocsController extends SwyftController{
 	
 	}
 	
+	public function libraries(){
+		$this->view->pageTitle = "Adding Custom Libraries";
+	}
+	
 
 
 }
